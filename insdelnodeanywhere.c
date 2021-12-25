@@ -72,7 +72,8 @@ void deletenode(int n){
         temp1 = temp1->next;
     }
     temp1->next = temp1->next->next;
-    free(temp1);
+    Node* temp2 = temp1->next;
+    free(temp2);
 }
 
 void printnode(Node* head){
