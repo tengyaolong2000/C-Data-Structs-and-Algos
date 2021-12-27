@@ -1,3 +1,4 @@
+//insert node at front, insert node at specified index, delete node and //////printnode 
 #include <stdio.h>
 #include <stdlib.h>
 
