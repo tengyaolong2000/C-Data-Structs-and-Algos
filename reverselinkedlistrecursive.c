@@ -70,6 +70,8 @@ void recursivereverse(Node* node){
    //same as
 
    node->next->next = node;
-   node->next->next->next = NULL;
+   node->next = NULL;
+
+   //or node->next->next->next = NULL;
 
 }
