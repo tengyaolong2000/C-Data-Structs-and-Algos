@@ -14,6 +14,10 @@ Node* head = NULL;
 Node* tail = NULL;
 
 int main(){
+for (int i =0; i<3;i++){
+    printf("hi \n");
+}
+
     Enqueue(1);
     Enqueue(2);
     Enqueue(3);
