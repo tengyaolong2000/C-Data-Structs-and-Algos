@@ -23,11 +23,12 @@ person_t ** studentPtrPtr = &studentPtr ;
 int main(){
     student1.Info.age = 21;
     
-    // ways to get age from studentPtr
+    //to get age from studentPtr
     
     int age1 = studentPtr->Info.age;
     printf("age1: %d\n", age1);
 
+    //to get age from studentPtrPtr
     int age2 = (*studentPtrPtr)->Info.age;
     printf("age2: %d", age2);
  
