@@ -11,32 +11,36 @@ typedef struct ListNode {
 }ListNode;
 
 //function prototypes
-void buildlist();
+void buildlist(ListNode** ptrHead);
 void printlist(ListNode *ptrHead);
 ListNode* insertNode(ListNode **ptrHead, int i, int item);
 
 
 
 //head pointer
-ListNode* head =NULL;
+
 
 
 int main(){
+
+    ListNode* head =NULL;
+    ListNode** ptrHead;
+    *ptrHead = head;
     
-    buildlist();
+    buildlist(ptrHead);
     printlist(head);
 
     //add 9 to index 2, remember index starts from 0
-    head = insertNode(&head, 2, 9);
+    head = insertNode(ptrHead, 2, 9);
     printf("\n");
-    printlist(head);
+    printlist(*ptrHead);
     
     
     
 }
 
 //build the linked list
-void buildlist(){
+void buildlist(ListNode** ptrHead){
     int length, data;
     ListNode* temp1 = (ListNode*) malloc(sizeof(ListNode));
     ListNode* temp2 = NULL;
@@ -47,7 +51,7 @@ void buildlist(){
     printf("Enter the data of the ListNode at index 0:\n");
     scanf("%d", &data);
     temp1->data=data;
-    head = temp1;
+    *ptrHead = temp1;
     temp2 = temp1;
 
     for (int i=0; i<length-1;i++){
