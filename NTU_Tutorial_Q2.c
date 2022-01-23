@@ -1,6 +1,7 @@
+
+//LABS IN OTHER REPOSITORY TITLED NTU DATA STRUCTS
 //recursive insertNode
 //plus some other functions to test correctness of code 
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,12 +16,6 @@ void buildlist(ListNode** ptrHead);
 void printlist(ListNode *ptrHead);
 ListNode* insertNode(ListNode **ptrHead, int i, int item);
 
-
-
-//head pointer
-
-
-
 int main(){
 
     ListNode* head =NULL;
@@ -28,14 +23,12 @@ int main(){
     *ptrHead = head;
     
     buildlist(ptrHead);
-    printlist(head);
+    printlist(*ptrHead);
 
     //add 9 to index 2, remember index starts from 0
-    head = insertNode(ptrHead, 2, 9);
+    *ptrHead = insertNode(ptrHead, 2, 9);
     printf("\n");
     printlist(*ptrHead);
-    
-    
     
 }
 
@@ -72,29 +65,25 @@ void printlist(ListNode *ptrHead){
     printlist(ptrHead->next);
 }
 
-//insertnode code
+//Recursive insertnode code
 ListNode* insertNode(ListNode **ptrHead, int i, int item){
-    
     
      ListNode *newNode = (ListNode*) malloc(sizeof(ListNode));
      newNode->data = item;
      newNode->next = NULL;
 
-    //base case
+    //base case, if we reach index or if index of inserted element exceeds length of linked list, add to back of list
      if (*ptrHead == NULL || i==0){
          newNode->next = *ptrHead;
          *ptrHead = newNode;
-         
      }
+
      //recursive part
      else{
-         //what the fuck it works
+         //what the fk it works
          (*ptrHead)->next = insertNode(&((*ptrHead)->next), i-1, item);
      }
 
     return *ptrHead;
 
 }
-
-     
- 

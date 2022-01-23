@@ -72,8 +72,9 @@ void deletenode(int n){
     for (int i=0; i<n-2; i++){
         temp1 = temp1->next;
     }
-    temp1->next = temp1->next->next;
     Node* temp2 = temp1->next;
+    temp1->next = temp1->next->next;
+    
     free(temp2);
 }
 
