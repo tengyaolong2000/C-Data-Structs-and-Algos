@@ -30,7 +30,7 @@ int main(){
     Q3F1(temp1->next->next, temp2);
     printlist(head);
 
-    //I GUESS IT KIND OF REMOVES THE NODES BETWEEN Aptr inclusive and Bptr exclusive??? IDK WTFK
+    //swaps nodes
 
 
 
